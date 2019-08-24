@@ -8,7 +8,7 @@ const onMutationHappen = (ele, cb) => {
   // Callback function to execute when mutations are observed
   const callback = mutationsList => {
     observer.disconnect();
-    console.log('>>> mutation callback called', mutationsList);
+    // console.log('>>> mutation callback called', mutationsList);
     cb && cb(mutationsList);
   };
 
@@ -29,12 +29,12 @@ const linkifyElement = ajaxContainer => {
       sentry = document.createElement('noscript');
       const innerText = title.innerText;
 
-      console.log('>>> linkifying node', title);
+      // console.log('>>> linkifying node', title);
 
-      title.innerHTML = innerText.replace(/CPM-\d+/, '<a target="blank" href="https://redisrupt.atlassian.net/browse/$&">$&</a>');
+      title.innerHTML = innerText.replace(/CPM-\d+/g, '<a target="blank" href="https://redisrupt.atlassian.net/browse/$&">$&</a>');
       title.appendChild(sentry);
     } else {
-      console.log('>>> sentry found skipping linkification');
+      // console.log('>>> sentry found skipping linkification');
     }
   }
 
