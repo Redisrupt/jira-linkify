@@ -2,7 +2,7 @@
 
 Super simple extension to linkify all jira tickets in the PR's title
 
-## installing
+## Install and adding it to chrome
 
 - First install and build it
   ```
