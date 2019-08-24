@@ -1,0 +1,30 @@
+{
+  "name": "jira-linkify",
+  "version": "1.0.0",
+  "description": "convert to links the jira ticket ids",
+  "homepage_url": "https://github.com/royriojas/pj",
+  "manifest_version": 2,
+  "minimum_chrome_version": "68",
+  "permissions": [
+    "storage",
+		"contextMenus",
+		"activeTab",
+		"https://github.com/*",
+		"https://api.github.com/*"
+  ],
+  "icons": {
+    "128": "resources/icon.png"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+				"https://github.com/*",
+				"https://gist.github.com/*"
+			],
+      "js": [
+        "dist/jira-linkify.js"
+      ]
+    }
+  ]
+}
