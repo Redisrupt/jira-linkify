@@ -24,6 +24,9 @@
 			],
       "js": [
         "dist/jira-linkify.js"
+      ],
+      "css": [
+        "dist/jira-linkify.css"
       ]
     }
   ]

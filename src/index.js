@@ -1,4 +1,12 @@
 import debounce from 'debouncy';
+import App from './components/header.svelte';
+
+const loadStyles = () => {
+  const style = document.createElement('style');
+  style.innerHTML = '.application-main.max .container-lg { max-width: unset }';
+
+  document.head.appendChild(style);
+};
 
 const onMutationHappen = (ele, cb) => {
   const targetNode = ele;
@@ -55,4 +63,19 @@ const enableLinkify = () => {
 
 window.addEventListener('load', () => {
   enableLinkify();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const h1 = document.querySelector('.pagehead h1');
+  const target = document.createElement('span');
+
+  loadStyles();
+
+  h1.appendChild(target);
+
+  // eslint-disable-next-line no-unused-vars
+  const app = new App({
+    target,
+  });
+
 });
